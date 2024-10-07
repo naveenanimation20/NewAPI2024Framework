@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="8472" started-at="2024-10-07T17:17:58 IST" finished-at="2024-10-07T17:18:06 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8472" started-at="2024-10-07T17:17:58 IST" finished-at="2024-10-07T17:18:06 IST">
+      <class name="com.qa.api.tests.ApiTests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="setup" is-config="true" duration-ms="454" started-at="2024-10-07T17:17:58 IST" finished-at="2024-10-07T17:17:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testGetWithJsonContentType()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="testGetWithJsonContentType" duration-ms="1866" started-at="2024-10-07T17:17:58 IST" finished-at="2024-10-07T17:18:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetWithJsonContentType -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="setup" is-config="true" duration-ms="3" started-at="2024-10-07T17:18:00 IST" finished-at="2024-10-07T17:18:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testGetWithJsonContentTypeWithAuthHeader()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="testGetWithJsonContentTypeWithAuthHeader" duration-ms="1453" started-at="2024-10-07T17:18:00 IST" finished-at="2024-10-07T17:18:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetWithJsonContentTypeWithAuthHeader -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="setup" is-config="true" duration-ms="4" started-at="2024-10-07T17:18:02 IST" finished-at="2024-10-07T17:18:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testPostWithJsonFile()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="testPostWithJsonFile" duration-ms="1580" started-at="2024-10-07T17:18:02 IST" finished-at="2024-10-07T17:18:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPostWithJsonFile -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="setup" is-config="true" duration-ms="2" started-at="2024-10-07T17:18:03 IST" finished-at="2024-10-07T17:18:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testPostWithPOJOLombok()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="testPostWithPOJOLombok" duration-ms="1828" started-at="2024-10-07T17:18:03 IST" finished-at="2024-10-07T17:18:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPostWithPOJOLombok -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="setup" is-config="true" duration-ms="1" started-at="2024-10-07T17:18:05 IST" finished-at="2024-10-07T17:18:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testPostWithPOJOLombokBuilder()[pri:0, instance:com.qa.api.tests.ApiTests@7f552bd3]" name="testPostWithPOJOLombokBuilder" duration-ms="1182" started-at="2024-10-07T17:18:05 IST" finished-at="2024-10-07T17:18:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPostWithPOJOLombokBuilder -->
+      </class> <!-- com.qa.api.tests.ApiTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
