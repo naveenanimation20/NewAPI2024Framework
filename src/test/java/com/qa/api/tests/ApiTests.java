@@ -5,11 +5,14 @@ package com.qa.api.tests;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.api.base.BaseTest;
+import com.qa.api.client.RestClient;
 import com.qa.api.contants.AuthType;
 import com.qa.api.pojo.User;
 
@@ -41,12 +44,39 @@ public class ApiTests extends BaseTest {
         Assert.assertEquals(response.getStatusCode(), 201);
     }
     
-    @Test
-    public void testPostWithPOJOLombok() {
-    	User user = new User("Naveen", "Naveenapifw2@gmail.com", "male", "active");
-    	Response response = restClient.post("public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+    
+ // Utility method to generate a random email
+    public String generateRandomEmail() {
+        String randomString = UUID.randomUUID().toString().substring(0, 5);  // generates a 5-character random string
+        return randomString + "@example.com";
+    }
+
+    // DataProvider method supplying different User objects with random email IDs
+    @DataProvider(name = "userDataProvider")
+    public Object[][] userDataProvider() {
+        return new Object[][] {
+            { new User("Naveen", generateRandomEmail(), "male", "active") },
+            { new User("Priya", generateRandomEmail(), "female", "active") },
+            { new User("John", generateRandomEmail(), "male", "inactive") }
+        };
+    }
+
+    // Test method that takes User data from the DataProvider
+    @Test(dataProvider = "userDataProvider")
+    public void testPostWithPOJOLombok(User user) {
+        RestClient restClient = new RestClient();
+        Response response = restClient.post("public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
         Assert.assertEquals(response.getStatusCode(), 201);
     }
+    
+    
+    
+//    @Test
+//    public void testPostWithPOJOLombok() {
+//    	User user = new User("Naveen", "Naveenapifw2@gmail.com", "male", "active");
+//    	Response response = restClient.post("public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+//        Assert.assertEquals(response.getStatusCode(), 201);
+//    }
     
     @Test
     public void testPostWithPOJOLombokBuilder() {
