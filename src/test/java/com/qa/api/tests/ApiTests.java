@@ -83,7 +83,7 @@ public class ApiTests extends BaseTest {
     	User user = User.builder()
     		.name("Naveen")
     		.status("active")
-    		.email("naveentestapi2@gmail.com")
+    		.email("naveentestapiz@gmail.com")
     		.gender("male")
     		.build();
     	Response response = restClient.post("public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);

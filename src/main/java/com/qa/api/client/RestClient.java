@@ -5,6 +5,8 @@ import java.io.File;
 import java.util.Base64;
 import java.util.Map;
 
+import static org.hamcrest.Matchers.*;
+
 import com.qa.api.contants.AuthType;
 
 import io.restassured.RestAssured;
@@ -19,9 +21,16 @@ public class RestClient {
 	
 	// Define a ResponseSpecification for successful responses (200 OK)
     private ResponseSpecification responseSpec200 = expect().log().all().statusCode(200);
+    
+    private ResponseSpecification responseSpec200Or404 = 
+    	    expect().log().all().statusCode(anyOf(equalTo(200), equalTo(404)));
+
 
     // Define a ResponseSpecification for 201 Created
     private ResponseSpecification responseSpec201 = expect().log().all().statusCode(201);
+    
+    private ResponseSpecification responseSpec204 = expect().log().all().statusCode(204);
+
 
     // Define a ResponseSpecification for 400 Bad Request
     private ResponseSpecification responseSpec400 = expect().log().all().statusCode(400);
@@ -36,13 +45,13 @@ public class RestClient {
     private ResponseSpecification defaultResponseSpec = expect().log().all();
 		
 
-    private String baseUrl = ConfigManager.get("baseUrl");
+   // private String baseUrl = ConfigManager.get("baseUrl");
 
-
+    
     // Method to handle different authentication mechanisms
     private RequestSpecification setupRequest(AuthType authType, ContentType contentType) {
         RequestSpecification request = RestAssured.given().log().all()
-                .baseUri(baseUrl)
+                .baseUri(ConfigManager.get("baseUrl"))
                 .contentType(contentType)  // Set Content-Type based on the input from Rest Assured's ContentType enum
                 .accept(contentType);      // Set Accept header for response content type
 
@@ -62,6 +71,7 @@ public class RestClient {
                 break;
             case NO_AUTH:
                 // No authentication header needed
+            	System.out.println("no auth is required...");
                 break;
         }
 
@@ -92,7 +102,7 @@ public class RestClient {
 
         applyParams(request, queryParams, pathParams, endpoint);
 
-        return request.get(endpoint).then().spec(responseSpec200).extract().response();
+        return request.get(endpoint).then().spec(responseSpec200Or404).extract().response();
     }
 
     // POST request with Lombok-based POJO, query params, and path params
@@ -128,7 +138,7 @@ public class RestClient {
 
         applyParams(request, queryParams, pathParams, endpoint);
 
-        return request.delete(endpoint).then().spec(responseSpec200).extract().response();
+        return request.delete(endpoint).then().spec(responseSpec204).extract().response();
     }
     
     

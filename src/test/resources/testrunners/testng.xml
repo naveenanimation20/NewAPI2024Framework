@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG Regression Suite" verbose="3">
+
+
+	<test name="Req Res Test">
+		<parameter name="baseUrl" value="https://reqres.in" />
+
+		<classes>
+			<class name="com.qa.api.tests.ReqResAPITest" />
+		</classes>
+	</test>
+
+
+	<test name="Go Rest API Test">
+		<parameter name="baseUrl" value="https://gorest.co.in" />
+
+		<classes>
+			<class name="com.qa.api.tests.CreateUserTest" />
+		</classes>
+	</test>
+	
+	<test name="Fake Product API Test">
+		<parameter name="baseUrl" value="https://fakestoreapi.com" />
+
+		<classes>
+			<class name="com.qa.api.tests.FakeProductAPITest" />
+		</classes>
+	</test>
+
+
+
+
+
+</suite>

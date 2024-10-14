@@ -1,58 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="7" passed="3" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-09T15:59:49 IST" name="Default suite" finished-at="2024-10-09T15:59:54 IST" duration-ms="4514">
+  <suite name="TestNG Regression Suite" duration-ms="5502" started-at="2024-10-14T19:37:54 IST" finished-at="2024-10-14T19:38:00 IST">
     <groups>
     </groups>
-    <test started-at="2024-10-09T15:59:49 IST" name="Default test" finished-at="2024-10-09T15:59:54 IST" duration-ms="4514">
-      <class name="com.qa.api.tests.ApiTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.ApiTests@1c39680d]" started-at="2024-10-09T15:59:49 IST" name="setup" finished-at="2024-10-09T15:59:50 IST" duration-ms="498" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="testPostWithPOJOLombok(com.qa.api.pojo.User)[pri:0, instance:com.qa.api.tests.ApiTests@1c39680d]" started-at="2024-10-09T15:59:50 IST" name="testPostWithPOJOLombok" data-provider="userDataProvider" finished-at="2024-10-09T15:59:52 IST" duration-ms="2080" status="PASS">
+    <test name="Req Res Test" duration-ms="1354" started-at="2024-10-14T19:37:54 IST" finished-at="2024-10-14T19:37:55 IST">
+      <class name="com.qa.api.tests.ReqResAPITest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.qa.api.tests.ReqResAPITest@1184ab05]" name="setup" is-config="true" duration-ms="371" started-at="2024-10-14T19:37:54 IST" finished-at="2024-10-14T19:37:55 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[User(name=Naveen, email=eca00@example.com, gender=male, status=active)]]>
+                <![CDATA[https://reqres.in]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPostWithPOJOLombok -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.ApiTests@1c39680d]" started-at="2024-10-09T15:59:52 IST" name="setup" finished-at="2024-10-09T15:59:52 IST" duration-ms="3" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testReqRestTest()[pri:0, instance:com.qa.api.tests.ReqResAPITest@1184ab05]" name="testReqRestTest" duration-ms="878" started-at="2024-10-14T19:37:55 IST" finished-at="2024-10-14T19:37:55 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="testPostWithPOJOLombok(com.qa.api.pojo.User)[pri:0, instance:com.qa.api.tests.ApiTests@1c39680d]" started-at="2024-10-09T15:59:52 IST" name="testPostWithPOJOLombok" data-provider="userDataProvider" finished-at="2024-10-09T15:59:53 IST" duration-ms="751" status="PASS">
+        </test-method> <!-- testReqRestTest -->
+      </class> <!-- com.qa.api.tests.ReqResAPITest -->
+    </test> <!-- Req Res Test -->
+    <test name="Go Rest API Test" duration-ms="3288" started-at="2024-10-14T19:37:56 IST" finished-at="2024-10-14T19:37:59 IST">
+      <class name="com.qa.api.tests.CreateUserTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.qa.api.tests.CreateUserTest@470f1802]" name="setup" is-config="true" duration-ms="4" started-at="2024-10-14T19:37:56 IST" finished-at="2024-10-14T19:37:56 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[User(name=Priya, email=f6ad1@example.com, gender=female, status=active)]]>
+                <![CDATA[https://gorest.co.in]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPostWithPOJOLombok -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.api.tests.ApiTests@1c39680d]" started-at="2024-10-09T15:59:53 IST" name="setup" finished-at="2024-10-09T15:59:53 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testPostWithPOJOLombokBuilder()[pri:0, instance:com.qa.api.tests.CreateUserTest@470f1802]" name="testPostWithPOJOLombokBuilder" duration-ms="3279" started-at="2024-10-14T19:37:56 IST" finished-at="2024-10-14T19:37:59 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="testPostWithPOJOLombok(com.qa.api.pojo.User)[pri:0, instance:com.qa.api.tests.ApiTests@1c39680d]" started-at="2024-10-09T15:59:53 IST" name="testPostWithPOJOLombok" data-provider="userDataProvider" finished-at="2024-10-09T15:59:54 IST" duration-ms="1097" status="PASS">
+        </test-method> <!-- testPostWithPOJOLombokBuilder -->
+      </class> <!-- com.qa.api.tests.CreateUserTest -->
+    </test> <!-- Go Rest API Test -->
+    <test name="Fake Product API Test" duration-ms="831" started-at="2024-10-14T19:37:59 IST" finished-at="2024-10-14T19:38:00 IST">
+      <class name="com.qa.api.tests.FakeProductAPITest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.qa.api.tests.FakeProductAPITest@17046283]" name="setup" is-config="true" duration-ms="2" started-at="2024-10-14T19:37:59 IST" finished-at="2024-10-14T19:37:59 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[User(name=John, email=beea9@example.com, gender=male, status=inactive)]]>
+                <![CDATA[https://fakestoreapi.com]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPostWithPOJOLombok -->
-      </class> <!-- com.qa.api.tests.ApiTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testFakeProductGETAPI()[pri:0, instance:com.qa.api.tests.FakeProductAPITest@17046283]" name="testFakeProductGETAPI" duration-ms="826" started-at="2024-10-14T19:37:59 IST" finished-at="2024-10-14T19:38:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFakeProductGETAPI -->
+      </class> <!-- com.qa.api.tests.FakeProductAPITest -->
+    </test> <!-- Fake Product API Test -->
+  </suite> <!-- TestNG Regression Suite -->
 </testng-results>

@@ -21,5 +21,9 @@ public class ConfigManager {
     public static String get(String key) {
         return properties.getProperty(key);
     }
+    
+    public static void set(String key, String value) {
+         properties.setProperty(key, value);
+    }
 }
 
