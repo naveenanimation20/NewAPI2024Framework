@@ -1,51 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="TestNG Regression Suite" duration-ms="5502" started-at="2024-10-14T19:37:54 IST" finished-at="2024-10-14T19:38:00 IST">
+  <suite name="Default suite" duration-ms="2382" started-at="2024-10-17T19:19:14 IST" finished-at="2024-10-17T19:19:16 IST">
     <groups>
     </groups>
-    <test name="Req Res Test" duration-ms="1354" started-at="2024-10-14T19:37:54 IST" finished-at="2024-10-14T19:37:55 IST">
-      <class name="com.qa.api.tests.ReqResAPITest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.qa.api.tests.ReqResAPITest@1184ab05]" name="setup" is-config="true" duration-ms="371" started-at="2024-10-14T19:37:54 IST" finished-at="2024-10-14T19:37:55 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://reqres.in]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testReqRestTest()[pri:0, instance:com.qa.api.tests.ReqResAPITest@1184ab05]" name="testReqRestTest" duration-ms="878" started-at="2024-10-14T19:37:55 IST" finished-at="2024-10-14T19:37:55 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testReqRestTest -->
-      </class> <!-- com.qa.api.tests.ReqResAPITest -->
-    </test> <!-- Req Res Test -->
-    <test name="Go Rest API Test" duration-ms="3288" started-at="2024-10-14T19:37:56 IST" finished-at="2024-10-14T19:37:59 IST">
-      <class name="com.qa.api.tests.CreateUserTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.qa.api.tests.CreateUserTest@470f1802]" name="setup" is-config="true" duration-ms="4" started-at="2024-10-14T19:37:56 IST" finished-at="2024-10-14T19:37:56 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://gorest.co.in]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testPostWithPOJOLombokBuilder()[pri:0, instance:com.qa.api.tests.CreateUserTest@470f1802]" name="testPostWithPOJOLombokBuilder" duration-ms="3279" started-at="2024-10-14T19:37:56 IST" finished-at="2024-10-14T19:37:59 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testPostWithPOJOLombokBuilder -->
-      </class> <!-- com.qa.api.tests.CreateUserTest -->
-    </test> <!-- Go Rest API Test -->
-    <test name="Fake Product API Test" duration-ms="831" started-at="2024-10-14T19:37:59 IST" finished-at="2024-10-14T19:38:00 IST">
-      <class name="com.qa.api.tests.FakeProductAPITest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.qa.api.tests.FakeProductAPITest@17046283]" name="setup" is-config="true" duration-ms="2" started-at="2024-10-14T19:37:59 IST" finished-at="2024-10-14T19:37:59 IST">
+    <test name="Default test" duration-ms="2382" started-at="2024-10-17T19:19:14 IST" finished-at="2024-10-17T19:19:16 IST">
+      <class name="com.qa.api.tests.FakeProductJsonPathTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.qa.api.tests.FakeProductJsonPathTest@460d0a57]" name="setup" is-config="true" duration-ms="377" started-at="2024-10-17T19:19:14 IST" finished-at="2024-10-17T19:19:14 IST">
           <params>
             <param index="0">
               <value>
@@ -56,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testFakeProductGETAPI()[pri:0, instance:com.qa.api.tests.FakeProductAPITest@17046283]" name="testFakeProductGETAPI" duration-ms="826" started-at="2024-10-14T19:37:59 IST" finished-at="2024-10-14T19:38:00 IST">
+        <test-method status="PASS" signature="getProductTest()[pri:0, instance:com.qa.api.tests.FakeProductJsonPathTest@460d0a57]" name="getProductTest" duration-ms="1854" started-at="2024-10-17T19:19:14 IST" finished-at="2024-10-17T19:19:16 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFakeProductGETAPI -->
-      </class> <!-- com.qa.api.tests.FakeProductAPITest -->
-    </test> <!-- Fake Product API Test -->
-  </suite> <!-- TestNG Regression Suite -->
+        </test-method> <!-- getProductTest -->
+      </class> <!-- com.qa.api.tests.FakeProductJsonPathTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

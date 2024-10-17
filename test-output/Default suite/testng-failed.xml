@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.api.tests.FakeProductAPITest">
+      <class name="com.qa.api.tests.FakeProductJsonPathTest">
         <methods>
-          <include name="testFakeProductGETAPI"/>
+          <include name="getProductTest"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.qa.api.tests.FakeProductAPITest -->
+      </class> <!-- com.qa.api.tests.FakeProductJsonPathTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
