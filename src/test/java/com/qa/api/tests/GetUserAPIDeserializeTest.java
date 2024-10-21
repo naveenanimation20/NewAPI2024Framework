@@ -17,7 +17,7 @@ public class GetUserAPIDeserializeTest extends BaseTest {
 	@Test
 	public void getUserTest() {
 
-		Response response = restClient.get("/public/v2/users", null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+		Response response = restClient.get(BASE_URL_GOREST, "/public/v2/users", null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
 
 		User[] userRes = JsonUtils.deserialize(response, User[].class);
 
@@ -40,7 +40,7 @@ public class GetUserAPIDeserializeTest extends BaseTest {
 		// 1. create a user : POST
 		User user = User.builder().name("Naveen").status("active").email("naveentestapii12@gmail.com").gender("male")
 				.build();
-		Response response = restClient.post("/public/v2/users", user, null, null, AuthType.BEARER_TOKEN,
+		Response response = restClient.post(BASE_URL_GOREST, "/public/v2/users", user, null, null, AuthType.BEARER_TOKEN,
 				ContentType.JSON);
 		Assert.assertEquals(response.getStatusCode(), 201);
 
@@ -48,7 +48,7 @@ public class GetUserAPIDeserializeTest extends BaseTest {
 		System.out.println("user id ==>" + userId);
 
 		// GET:
-		Response responseGet = restClient.get("/public/v2/users/"+ userId, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+		Response responseGet = restClient.get(BASE_URL_GOREST, "/public/v2/users/"+ userId, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
 
 		// De-Serialization: JSON to POJO
 

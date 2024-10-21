@@ -18,7 +18,7 @@ public class CircuitJsonPathTest extends BaseTest{
 	@Test
 	public void getCircuitTest() {
 		
-		Response response = restClient.get("/api/f1/2017/circuits.json", null, null, AuthType.NO_AUTH, ContentType.JSON);
+		Response response = restClient.get(BASE_URL_CIRCUIT, "/api/f1/2017/circuits.json", null, null, AuthType.NO_AUTH, ContentType.JSON);
 		
 		Assert.assertEquals(response.statusCode(), 200);
 		

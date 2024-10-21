@@ -26,13 +26,13 @@ public class ApiTests extends BaseTest {
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("name", "naveen");
 
-        Response response = restClient.get("/public/v2/users", queryParams, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+        Response response = restClient.get(BASE_URL_GOREST, "/public/v2/users", queryParams, null, AuthType.BEARER_TOKEN, ContentType.JSON);
         Assert.assertEquals(response.getStatusCode(), 200);
     }
     
     @Test
     public void testGetWithJsonContentTypeWithAuthHeader() {
-        Response response = restClient.get("/public/v2/users", null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+        Response response = restClient.get(BASE_URL_GOREST, "/public/v2/users", null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
         Assert.assertEquals(response.getStatusCode(), 200);
     }
     
@@ -40,7 +40,7 @@ public class ApiTests extends BaseTest {
     public void testPostWithJsonFile() {
         // Path to the JSON file that contains the request body
         File jsonFile = new File("./src/test/resources/jsons/user.json");
-        Response response = restClient.postWithFile("/public/v2/users", jsonFile, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+        Response response = restClient.postWithFile(BASE_URL_GOREST, "/public/v2/users", jsonFile, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
         Assert.assertEquals(response.getStatusCode(), 201);
     }
     
@@ -65,7 +65,7 @@ public class ApiTests extends BaseTest {
     @Test(dataProvider = "userDataProvider")
     public void testPostWithPOJOLombok(User user) {
         RestClient restClient = new RestClient();
-        Response response = restClient.post("public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+        Response response = restClient.post(BASE_URL_GOREST, "public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
         response.prettyPrint();
         Assert.assertEquals(response.getStatusCode(), 201);
     }
@@ -87,7 +87,7 @@ public class ApiTests extends BaseTest {
     		.email("naveentestapiz@gmail.com")
     		.gender("male")
     		.build();
-    	Response response = restClient.post("public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+    	Response response = restClient.post(BASE_URL_GOREST, "public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
         Assert.assertEquals(response.getStatusCode(), 201);
     }
     

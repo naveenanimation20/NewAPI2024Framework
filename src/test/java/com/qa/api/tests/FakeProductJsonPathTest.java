@@ -19,7 +19,7 @@ public class FakeProductJsonPathTest extends BaseTest{
 	@Test
 	public void getProductTest() {
 		
-		Response response = restClient.get("/products", null, null, AuthType.NO_AUTH, ContentType.JSON);
+		Response response = restClient.get(BASE_URL_PRODUCT, "/products", null, null, AuthType.NO_AUTH, ContentType.JSON);
 		
 		Assert.assertEquals(response.statusCode(), 200);
 		

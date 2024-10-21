@@ -52,9 +52,9 @@ public class RestClient {
 
     
     // Method to handle different authentication mechanisms
-    private RequestSpecification setupRequest(AuthType authType, ContentType contentType) {
+    private RequestSpecification setupRequest(String baseUrl, AuthType authType, ContentType contentType) {
         RequestSpecification request = RestAssured.given().log().all()
-                .baseUri(ConfigManager.get("baseUrl"))
+                .baseUri(baseUrl)
                 .contentType(contentType)  // Set Content-Type based on the input from Rest Assured's ContentType enum
                 .accept(contentType);      // Set Accept header for response content type
 
@@ -103,8 +103,8 @@ public class RestClient {
     }
 
     // GET request with query params and path params
-    public Response get(String endpoint, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
-        RequestSpecification request = setupRequest(authType, contentType);
+    public Response get(String baseUrl, String endpoint, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
+        RequestSpecification request = setupRequest(baseUrl, authType, contentType);
 
         applyParams(request, queryParams, pathParams, endpoint);
 
@@ -112,8 +112,8 @@ public class RestClient {
     }
 
     // POST request with Lombok-based POJO, query params, and path params
-    public <T> Response post(String endpoint, T body, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
-        RequestSpecification request = setupRequest(authType, contentType);
+    public <T> Response post(String baseUrl, String endpoint, T body, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
+        RequestSpecification request = setupRequest(baseUrl, authType, contentType);
 
         applyParams(request, queryParams, pathParams, endpoint);
 
@@ -121,8 +121,8 @@ public class RestClient {
     }
 
     // PUT request
-    public <T> Response put(String endpoint, T body, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
-        RequestSpecification request = setupRequest(authType, contentType);
+    public <T> Response put(String baseUrl, String endpoint, T body, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
+        RequestSpecification request = setupRequest(baseUrl, authType, contentType);
 
         applyParams(request, queryParams, pathParams, endpoint);
 
@@ -130,8 +130,8 @@ public class RestClient {
     }
 
     // PATCH request
-    public <T> Response patch(String endpoint, T body, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
-        RequestSpecification request = setupRequest(authType, contentType);
+    public <T> Response patch(String baseUrl, String endpoint, T body, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
+        RequestSpecification request = setupRequest(baseUrl, authType, contentType);
 
         applyParams(request, queryParams, pathParams, endpoint);
 
@@ -139,8 +139,8 @@ public class RestClient {
     }
 
     // DELETE request
-    public Response delete(String endpoint, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
-        RequestSpecification request = setupRequest(authType, contentType);
+    public Response delete(String baseUrl, String endpoint, Map<String, String> queryParams, Map<String, String> pathParams, AuthType authType, ContentType contentType) {
+        RequestSpecification request = setupRequest(baseUrl, authType, contentType);
 
         applyParams(request, queryParams, pathParams, endpoint);
 
@@ -149,12 +149,12 @@ public class RestClient {
     
     
  // Add a method to handle POST requests with a file
-    public Response postWithFile(String endpoint, File file, 
+    public Response postWithFile(String baseUrl, String endpoint, File file, 
                                  Map<String, String> queryParams, 
                                  Map<String, String> pathParams, 
                                  AuthType authType, ContentType contentType) {
     	
-    	RequestSpecification request = setupRequest(authType, contentType);
+        RequestSpecification request = setupRequest(baseUrl, authType, contentType);
 
     	applyParams(request, queryParams, pathParams, endpoint);
 

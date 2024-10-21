@@ -14,7 +14,7 @@ public class FakeProductAPITest extends BaseTest {
 	@Test
     public void testFakeProductGETAPI() {        
         //GET:
-        Response responseGet = restClient.get("/products", null, null, AuthType.NO_AUTH, ContentType.JSON);
+        Response responseGet = restClient.get(BASE_URL_PRODUCT, "/products", null, null, AuthType.NO_AUTH, ContentType.JSON);
         Assert.assertEquals(responseGet.getStatusCode(), 200);
     }
 

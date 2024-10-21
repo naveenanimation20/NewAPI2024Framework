@@ -16,7 +16,7 @@ public class ProductAPIWithDeserializeTest extends BaseTest {
 
 		// RestAssured.baseURI = "https://fakestoreapi.com";
 
-		Response response = restClient.get("/products", null, null, AuthType.NO_AUTH, ContentType.JSON);
+		Response response = restClient.get(BASE_URL_PRODUCT, "/products", null, null, AuthType.NO_AUTH, ContentType.JSON);
 
 		Product[] product = JsonUtils.deserialize(response, Product[].class);
 

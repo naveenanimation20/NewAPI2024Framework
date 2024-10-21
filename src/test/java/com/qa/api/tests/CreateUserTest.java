@@ -18,17 +18,17 @@ public class CreateUserTest extends BaseTest {
     	User user = User.builder()
     		.name("Naveen")
     		.status("active")
-    		.email("naveentestapii@gmail.com")
+    		.email("naveentestap1i@gmail.com")
     		.gender("male")
     		.build();
-    	Response response = restClient.post("/public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+    	Response response = restClient.post( BASE_URL_GOREST, "/public/v2/users", user, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
         Assert.assertEquals(response.getStatusCode(), 201);
         
         String userId = response.jsonPath().getString("id");
         System.out.println("user id ==>"+ userId);
         
         //GET:
-        Response responseGet = restClient.get("/public/v2/users/"+userId, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
+        Response responseGet = restClient.get(BASE_URL_GOREST, "/public/v2/users/"+userId, null, null, AuthType.BEARER_TOKEN, ContentType.JSON);
         Assert.assertEquals(responseGet.getStatusCode(), 200);
         Assert.assertEquals(responseGet.jsonPath().getString("id"), userId);        
     }
