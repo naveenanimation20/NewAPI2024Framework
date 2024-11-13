@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.api.tests.GraphQLQueryUser">
+      <class name="com.qa.api.tests.GraphQLMutationUser">
         <methods>
-          <include name="testGetUserQueryWithVariables"/>
+          <include name="testCreateUserMutationUsingMapAndGraphqlFile"/>
         </methods>
-      </class> <!-- com.qa.api.tests.GraphQLQueryUser -->
+      </class> <!-- com.qa.api.tests.GraphQLMutationUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
